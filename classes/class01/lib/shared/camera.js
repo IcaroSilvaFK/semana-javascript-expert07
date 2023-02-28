@@ -29,5 +29,16 @@ export default class Camera {
     camera.video.width = 320;
 
     document.body.insertAdjacentElement('beforeend', camera.video);
+
+    // aguarda pela camera!
+    await new Promise((resolve) => {
+      camera.video.onloadedmetadata = () => {
+        resolve(camera.video);
+      };
+    });
+
+    camera.video.play();
+
+    return camera;
   }
 }
