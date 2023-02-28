@@ -4,7 +4,7 @@ export default class Camera {
   }
 
   static async init() {
-    if (!navigator.mediaDevices || !navigator.mediaDevices?.getUserMedia()) {
+    if (!navigator.mediaDevices || !navigator.mediaDevices?.getUserMedia) {
       throw new Error(
         `Browser API navigator.mediaDevices.getUserMedia() is not available`
       );
