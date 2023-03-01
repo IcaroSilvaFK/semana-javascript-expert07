@@ -4,7 +4,7 @@ export default class Camera {
   }
 
   static async init() {
-    if (!navigator.mediaDevices || !navigator.mediaDevices?.getUserMedia) {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       throw new Error(
         `Browser API navigator.mediaDevices.getUserMedia() is not available`
       );
@@ -25,10 +25,9 @@ export default class Camera {
 
     camera.video.srcObject = stream;
 
-    camera.video.height = 240;
-    camera.video.width = 320;
-
-    document.body.insertAdjacentElement('beforeend', camera.video);
+    // camera.video.height = 240;
+    // camera.video.width = 320;
+    // document.body.insertAdjacentElement('beforeend', camera.video);
 
     // aguarda pela camera!
     await new Promise((resolve) => {

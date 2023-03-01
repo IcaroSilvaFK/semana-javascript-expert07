@@ -2,9 +2,11 @@ export default class View {
   #btnInit = document.querySelector('#init');
   #statusElement = document.querySelector('#status');
   #videoFrameCanvas = document.createElement('canvas');
+
   #canvasContext = this.#videoFrameCanvas.getContext('2d', {
     willReadFrequently: true,
   });
+  #videoElement = document.getElementById('video');
 
   enableButton() {
     this.#btnInit.disabled = false;
@@ -20,6 +22,14 @@ export default class View {
     this.#canvasContext.drawImage(video, 0, 0, width, height);
 
     return this.#canvasContext.getImageData(0, 0, width, height);
+  }
+
+  togglePlayVideo() {
+    if (this.#videoElement.paused) {
+      this.#videoElement.play();
+      return;
+    }
+    this.#videoElement.pause();
   }
 
   configureOnBtnClick(fn) {
