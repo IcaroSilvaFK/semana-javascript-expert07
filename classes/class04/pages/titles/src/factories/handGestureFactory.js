@@ -17,14 +17,13 @@ import {
 const camera = await Camera.init();
 const styler = new PseudoStyler();
 
-await styler.loadDocumentStyles();
-
 const factory = {
   async initialize() {
     return HandGestureController.initialize({
       camera,
       view: new HandGestureView({
         fingerLookupIndexes,
+        styler,
       }),
       service: new HandGestureService({
         fingerpose: window.fp,
