@@ -1,3 +1,11 @@
 {
-  "window.zoomLevel": 0.5
+  "window.zoomLevel": 0.5,
+  "workbench.colorCustomizations": {
+    "sash.hoverBorder": "#a383ec",
+    "statusBar.background": "#8257e5",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#a383ec",
+    "statusBarItem.remoteBackground": "#8257e5",
+    "statusBarItem.remoteForeground": "#e7e7e7"
+  }
 }
